@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'items/main.css' %}">
+    <title>Carshop</title>
+</head>
+<body>
+   <div class="header">
+    <div class="logo">
+        <h3>CarShop</h3>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Signup</a></li>
+        </ul>
+    </div>
+   </div>
+   {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    </div>
+   {% endif %}
+    {% block content %}
+    {% endblock %}  
+    <div class="Footersection">
+		<div class="Footermenu">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="{% url 'register' %}">Sign Up</a></li>
+				<li><a href="{% url 'login' %}">Login</a></li>
+				<li><a href="#">About us</a>
+			</ul>	
+		</div>
+		<p>&copy;Copyright RK5</p>
+	</div>
+</body>
+</html>

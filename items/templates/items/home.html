@@ -1,0 +1,33 @@
+{% extends 'items/base.html' %}
+{% block content %}
+<div class="cards"> 
+    {% for item in object_list %}
+  <div class="card ">
+    <img class="card__image" src="{{item.img.url}}" alt="">
+    <div class="card__content">
+        <h4>{{ item.title }}</h4>
+    </div>
+    <div class="card__info">
+        <a href="{% url 'car-details' item.id %}" class="card__link">View</a>
+    </div>
+  </div> 
+    {% endfor %}
+</div>
+  <div class="pagination">
+    {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; First</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+    {% for num in page_obj.paginator.page_range %}
+      {% if page_obj.number == num %}
+          <a class="active" href="?page={{ num }}">{{num}}</a>
+      {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a href="?page={{ num }}">{{num}}</a>
+    {% endif %}
+  {% endfor %}    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+    {% endif %}
+  </div>
+  
+{% endblock %}

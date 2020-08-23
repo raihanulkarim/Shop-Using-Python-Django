@@ -1,0 +1,13 @@
+{% extends 'items/base.html' %}
+{% block content %}
+<div class="cards"> 
+  <div class="obj__content">
+    <img class="obj_img" src="{{object.img.url}}" alt="">
+        <h4 class="obj_price">Price: {{ object.price }}$</h4>
+  </div>
+  <div class="obj__content">
+        <h4 class="obj_title">{{ object.title }}</h4>
+            <h4><strong>Description:</strong>{{ object.desc }}</h4>
+      </div>
+</div>
+{% endblock %}
