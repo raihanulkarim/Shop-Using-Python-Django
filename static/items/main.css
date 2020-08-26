@@ -56,6 +56,9 @@ body {
 	color: #DDDDDD;
 	border-radius: 0px;
 }
+.nav-form{
+   
+}
 
 .cards {
     margin: 0 auto;
@@ -151,7 +154,14 @@ body {
     color: rgb(24, 17, 16);
     background: rgb(99, 187, 201);
 }
-.obj__content {
+.obj__content1 {
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+    background: #fafafa;
+    border: 1px solid ;
+}
+.obj__content2 {
     line-height: 1.5;
     font-size: 0.9em;
     padding: 15px;

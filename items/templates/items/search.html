@@ -1,0 +1,19 @@
+{% extends 'items/base.html' %}
+{% block content %}
+
+        <div class="cards"> 
+            {% for item in object_list %}
+        <div class="card ">
+            <img class="card__image" src="{{item.img.url}}" alt="">
+            <div class="card__content">
+                <h4>{{ item.title }}</h4>
+            </div>
+            <div class="card__info">
+                <a href="{% url 'car-details' item.id %}" class="card__link">View</a>
+            </div>
+        </div> 
+            {% endfor %}
+        </div>
+
+  
+{% endblock %}
